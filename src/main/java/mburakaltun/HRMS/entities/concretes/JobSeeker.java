@@ -2,18 +2,16 @@ package mburakaltun.HRMS.entities.concretes;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
+@Table(name = "job_seekers")
 public class JobSeeker {
 
     @Column(name = "id")
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "name")
@@ -33,4 +31,17 @@ public class JobSeeker {
 
     @Column(name = "password")
     private String password;
+
+    public JobSeeker(String name, String surname, String idNo, String birthdate, String email, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.idNo = idNo;
+        this.birthdate = birthdate;
+        this.email = email;
+        this.password = password;
+    }
+
+    public JobSeeker() {
+
+    }
 }

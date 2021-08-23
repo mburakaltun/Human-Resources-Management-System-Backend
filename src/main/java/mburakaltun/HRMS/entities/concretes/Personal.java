@@ -2,13 +2,11 @@ package mburakaltun.HRMS.entities.concretes;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
+@Table(name = "personals")
 public class Personal {
 
     @Column(name = "id")
