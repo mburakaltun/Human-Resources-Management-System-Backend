@@ -1,12 +1,15 @@
 package mburakaltun.HRMS.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
 @Table(name = "employers")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
 public class Employer {
 
     @Column(name = "id")
@@ -28,6 +31,9 @@ public class Employer {
 
     @Column(name = "password")
     private String password;
+
+    @OneToMany(mappedBy = "employer")
+    private List<JobAdvertisement> jobAdvertisements;
 
     public Employer(String companyName, String companyEmail, String companyWebsite, String phoneNumber, String password) {
         this.companyName = companyName;
