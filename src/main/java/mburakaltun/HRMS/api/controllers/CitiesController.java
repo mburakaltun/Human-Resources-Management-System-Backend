@@ -1,8 +1,7 @@
 package mburakaltun.HRMS.api.controllers;
 
 import mburakaltun.HRMS.business.abstracts.CityService;
-import mburakaltun.HRMS.core.Result;
-import mburakaltun.HRMS.entities.concretes.City;
+import mburakaltun.HRMS.core.results.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

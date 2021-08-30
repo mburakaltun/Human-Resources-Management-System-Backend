@@ -1,12 +1,13 @@
 package mburakaltun.HRMS.api.controllers;
 
 import mburakaltun.HRMS.business.abstracts.JobAdvertisementService;
-import mburakaltun.HRMS.core.DataResult;
-import mburakaltun.HRMS.core.SuccessDataResult;
-import mburakaltun.HRMS.entities.DTOs.JobAdvertisementListDTO;
-import mburakaltun.HRMS.entities.concretes.JobAdvertisement;
+import mburakaltun.HRMS.core.results.DataResult;
+import mburakaltun.HRMS.core.results.Result;
+import mburakaltun.HRMS.models.DTOs.JobAdvertisementListDTO;
+import mburakaltun.HRMS.models.entities.JobAdvertisement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,5 +37,20 @@ public class JobAdvertisementsController {
     @GetMapping("getAllByDesc")
     public DataResult<List<JobAdvertisementListDTO>> getAllByDesc() {
         return jobAdvertisementService.getAllByDesc();
+    }
+
+    @GetMapping("/getAllByEmployerId")
+    public DataResult<List<JobAdvertisementListDTO>> getAllByEmployerId(int employerId) {
+        return jobAdvertisementService.getAllByEmployerId(employerId);
+    }
+
+    @PostMapping("/deleteById")
+    public Result deleteById(int id) {
+        return jobAdvertisementService.deleteById(id);
+    }
+
+    @PostMapping("/add")
+    public Result add(JobAdvertisement jobAdvertisement) {
+        return jobAdvertisementService.add(jobAdvertisement);
     }
 }

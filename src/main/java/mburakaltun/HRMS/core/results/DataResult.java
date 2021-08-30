@@ -1,4 +1,4 @@
-package mburakaltun.HRMS.core;
+package mburakaltun.HRMS.core.results;
 
 public class DataResult<T> extends Result {
     private T data;

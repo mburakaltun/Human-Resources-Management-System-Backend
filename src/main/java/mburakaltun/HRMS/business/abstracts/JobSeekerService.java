@@ -1,8 +1,9 @@
 package mburakaltun.HRMS.business.abstracts;
 
-import mburakaltun.HRMS.core.DataResult;
-import mburakaltun.HRMS.core.Result;
-import mburakaltun.HRMS.entities.concretes.JobSeeker;
+import mburakaltun.HRMS.core.results.DataResult;
+import mburakaltun.HRMS.core.results.Result;
+import mburakaltun.HRMS.models.entities.JobSeeker;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 

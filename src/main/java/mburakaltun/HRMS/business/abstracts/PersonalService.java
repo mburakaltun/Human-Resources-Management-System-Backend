@@ -1,4 +1,6 @@
 package mburakaltun.HRMS.business.abstracts;
 
-public interface PersonalService {
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+public interface PersonalService extends UserDetailsService {
 }

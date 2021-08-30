@@ -1,10 +1,10 @@
 package mburakaltun.HRMS.api.controllers;
 
 import mburakaltun.HRMS.business.abstracts.EmployerService;
-import mburakaltun.HRMS.core.DataResult;
-import mburakaltun.HRMS.core.Result;
-import mburakaltun.HRMS.entities.concretes.Employer;
-import mburakaltun.HRMS.entities.concretes.JobAdvertisement;
+import mburakaltun.HRMS.core.results.DataResult;
+import mburakaltun.HRMS.core.results.Result;
+import mburakaltun.HRMS.models.entities.Employer;
+import mburakaltun.HRMS.models.entities.JobAdvertisement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,10 +29,5 @@ public class EmployersController {
     @PostMapping("/add")
     public Result add(@RequestBody Employer employer) {
         return employerService.add(employer);
-    }
-
-    @PostMapping("/addJobAdvertisement")
-    public Result addJobAdvertisement(@RequestBody JobAdvertisement jobAdvertisement) {
-        return employerService.addJobAdvertisement(jobAdvertisement);
     }
 }

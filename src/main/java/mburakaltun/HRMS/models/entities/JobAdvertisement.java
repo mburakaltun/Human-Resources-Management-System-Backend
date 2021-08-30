@@ -1,4 +1,4 @@
-package mburakaltun.HRMS.entities.concretes;
+package mburakaltun.HRMS.models.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

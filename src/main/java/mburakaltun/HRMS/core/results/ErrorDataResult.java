@@ -1,4 +1,4 @@
-package mburakaltun.HRMS.core;
+package mburakaltun.HRMS.core.results;
 
 public class ErrorDataResult<T> extends DataResult<T>{
     public ErrorDataResult(T data) {

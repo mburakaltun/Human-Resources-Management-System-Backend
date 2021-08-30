@@ -1,15 +1,19 @@
 package mburakaltun.HRMS.business.concretes;
 
 import mburakaltun.HRMS.business.abstracts.JobSeekerService;
-import mburakaltun.HRMS.core.DataResult;
-import mburakaltun.HRMS.core.Result;
-import mburakaltun.HRMS.core.SuccessDataResult;
-import mburakaltun.HRMS.core.SuccessResult;
-import mburakaltun.HRMS.dataAccess.abstracts.JobSeekerDAO;
-import mburakaltun.HRMS.entities.concretes.JobSeeker;
+import mburakaltun.HRMS.core.results.DataResult;
+import mburakaltun.HRMS.core.results.Result;
+import mburakaltun.HRMS.core.results.SuccessDataResult;
+import mburakaltun.HRMS.core.results.SuccessResult;
+import mburakaltun.HRMS.dataAccess.JobSeekerDAO;
+import mburakaltun.HRMS.models.entities.JobSeeker;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service

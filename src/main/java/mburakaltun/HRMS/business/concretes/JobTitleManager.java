@@ -1,9 +1,9 @@
 package mburakaltun.HRMS.business.concretes;
 
 import mburakaltun.HRMS.business.abstracts.JobTitleService;
-import mburakaltun.HRMS.core.*;
-import mburakaltun.HRMS.dataAccess.abstracts.JobTitleDAO;
-import mburakaltun.HRMS.entities.concretes.JobTitle;
+import mburakaltun.HRMS.core.results.*;
+import mburakaltun.HRMS.dataAccess.JobTitleDAO;
+import mburakaltun.HRMS.models.entities.JobTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

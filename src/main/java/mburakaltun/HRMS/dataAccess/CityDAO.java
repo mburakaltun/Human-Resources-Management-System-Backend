@@ -1,6 +1,6 @@
-package mburakaltun.HRMS.dataAccess.abstracts;
+package mburakaltun.HRMS.dataAccess;
 
-import mburakaltun.HRMS.entities.concretes.City;
+import mburakaltun.HRMS.models.entities.City;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

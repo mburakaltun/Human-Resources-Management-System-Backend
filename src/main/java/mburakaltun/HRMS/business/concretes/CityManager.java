@@ -1,11 +1,11 @@
 package mburakaltun.HRMS.business.concretes;
 
 import mburakaltun.HRMS.business.abstracts.CityService;
-import mburakaltun.HRMS.core.ErrorResult;
-import mburakaltun.HRMS.core.Result;
-import mburakaltun.HRMS.core.SuccessResult;
-import mburakaltun.HRMS.dataAccess.abstracts.CityDAO;
-import mburakaltun.HRMS.entities.concretes.City;
+import mburakaltun.HRMS.core.results.ErrorResult;
+import mburakaltun.HRMS.core.results.Result;
+import mburakaltun.HRMS.core.results.SuccessResult;
+import mburakaltun.HRMS.dataAccess.CityDAO;
+import mburakaltun.HRMS.models.entities.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

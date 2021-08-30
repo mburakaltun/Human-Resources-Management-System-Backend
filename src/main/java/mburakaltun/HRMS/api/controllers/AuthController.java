@@ -1,12 +1,19 @@
 package mburakaltun.HRMS.api.controllers;
 
 import mburakaltun.HRMS.business.abstracts.AuthService;
-import mburakaltun.HRMS.core.DataResult;
-import mburakaltun.HRMS.entities.DTOs.EmployerRegisterDTO;
-import mburakaltun.HRMS.entities.DTOs.JobSeekerRegisterDTO;
-import mburakaltun.HRMS.entities.concretes.Employer;
-import mburakaltun.HRMS.entities.concretes.JobSeeker;
+import mburakaltun.HRMS.business.abstracts.PersonalService;
+import mburakaltun.HRMS.core.results.DataResult;
+import mburakaltun.HRMS.core.results.SuccessDataResult;
+import mburakaltun.HRMS.models.DTOs.EmployerRegisterDTO;
+import mburakaltun.HRMS.models.DTOs.JobSeekerRegisterDTO;
+import mburakaltun.HRMS.models.entities.Employer;
+import mburakaltun.HRMS.models.entities.JobSeeker;
+import mburakaltun.HRMS.models.entities.Personal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private AuthService authService;
+    private PersonalService personalService;
 
     @Autowired
-    public AuthController(AuthService authService) {
+    public AuthController(AuthService authService, PersonalService personalService) {
         this.authService = authService;
+        this.personalService = personalService;
     }
 
     @PostMapping("/register/jobseeker")

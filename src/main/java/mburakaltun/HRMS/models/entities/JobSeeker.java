@@ -1,4 +1,4 @@
-package mburakaltun.HRMS.entities.concretes;
+package mburakaltun.HRMS.models.entities;
 
 import lombok.Data;
 
@@ -13,6 +13,9 @@ public class JobSeeker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "name")
     private String name;
