@@ -2,6 +2,7 @@ package mburakaltun.HRMS.business.abstracts;
 
 import mburakaltun.HRMS.core.results.DataResult;
 import mburakaltun.HRMS.core.results.Result;
+import mburakaltun.HRMS.models.DTOs.JobSeekerCVInfoDTO;
 import mburakaltun.HRMS.models.entities.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,4 +20,5 @@ public interface JobSeekerService {
     Result addProgrammingLanguages(List<JobSeekerProgrammingLanguage> programmingLanguages, int jobSeekerId);
     Result addProfilePicturePath(MultipartFile image, int jobSeekerId) throws IOException;
     DataResult<String> getProfilePicturePath(int jobSeekerId);
+    DataResult<JobSeekerCVInfoDTO> getCVInfo(int jobSeekerId);
 }

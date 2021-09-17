@@ -5,6 +5,7 @@ import mburakaltun.HRMS.core.results.DataResult;
 import mburakaltun.HRMS.core.results.Result;
 import mburakaltun.HRMS.core.results.SuccessDataResult;
 import mburakaltun.HRMS.core.results.SuccessResult;
+import mburakaltun.HRMS.models.DTOs.JobSeekerCVInfoDTO;
 import mburakaltun.HRMS.models.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import javax.xml.crypto.Data;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -78,6 +80,11 @@ public class JobSeekersController {
                 .status(HttpStatus.OK)
                 .contentLength(inputStream.contentLength())
                 .body(inputStream);
+    }
+
+    @GetMapping("getCVInfo")
+    public DataResult<JobSeekerCVInfoDTO> getCVInfo(@RequestParam int jobSeekerId) {
+        return jobSeekerService.getCVInfo(jobSeekerId);
     }
 
     /*@ResponseStatus(HttpStatus.BAD_REQUEST)

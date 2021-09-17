@@ -3,6 +3,7 @@ package mburakaltun.HRMS.business.concretes;
 import mburakaltun.HRMS.business.abstracts.JobSeekerService;
 import mburakaltun.HRMS.core.results.*;
 import mburakaltun.HRMS.dataAccess.JobSeekerDAO;
+import mburakaltun.HRMS.models.DTOs.JobSeekerCVInfoDTO;
 import mburakaltun.HRMS.models.entities.*;
 import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,13 +87,13 @@ public class JobSeekerManager implements JobSeekerService {
     @Override
     public Result addProfilePicturePath(MultipartFile image, int jobSeekerId) throws IOException {
         Optional<JobSeeker> jobSeeker = jobSeekerDAO.findById(jobSeekerId);
-        if(!jobSeeker.isPresent()) {
+        if (!jobSeeker.isPresent()) {
             return new ErrorResult("No user found by id " + jobSeekerId);
         }
         byte[] bytes = image.getBytes();
         Path path = Paths.get("src/main/resources/static/" + jobSeekerId + "/" + image.getOriginalFilename());
         File directory = new File("src/main/resources/static/" + jobSeekerId + "/");
-        if(!directory.exists()) {
+        if (!directory.exists()) {
             directory.mkdir();
         } else {
             FileUtils.cleanDirectory(directory);
@@ -106,5 +107,24 @@ public class JobSeekerManager implements JobSeekerService {
     @Override
     public DataResult<String> getProfilePicturePath(int jobSeekerId) {
         return new SuccessDataResult<>(jobSeekerDAO.getById(jobSeekerId).getProfilePicturePath());
+    }
+
+    @Override
+    public DataResult<JobSeekerCVInfoDTO> getCVInfo(int jobSeekerId) {
+        JobSeekerCVInfoDTO jobSeekerCVInfoDTO = new JobSeekerCVInfoDTO(
+                jobSeekerDAO.getById(jobSeekerId).getName(),
+                jobSeekerDAO.getById(jobSeekerId).getSurname(),
+                jobSeekerDAO.getById(jobSeekerId).getIdNo(),
+                jobSeekerDAO.getById(jobSeekerId).getBirthdate(),
+                jobSeekerDAO.getById(jobSeekerId).getEmail(),
+                jobSeekerDAO.getById(jobSeekerId).getLinkedinUrl(),
+                jobSeekerDAO.getById(jobSeekerId).getGithubUrl(),
+                jobSeekerDAO.getById(jobSeekerId).getCoverLetter(),
+                jobSeekerDAO.getById(jobSeekerId).getEducationalBackgrounds(),
+                jobSeekerDAO.getById(jobSeekerId).getForeignLanguages(),
+                jobSeekerDAO.getById(jobSeekerId).getJobExperiences(),
+                jobSeekerDAO.getById(jobSeekerId).getProgrammingLanguages()
+        );
+        return new SuccessDataResult<>(jobSeekerCVInfoDTO);
     }
 }
