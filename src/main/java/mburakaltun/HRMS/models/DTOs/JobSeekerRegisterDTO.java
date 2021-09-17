@@ -1,4 +1,4 @@
-package mburakaltun.HRMS.entities.DTOs;
+package mburakaltun.HRMS.models.DTOs;
 
 import lombok.Data;
 

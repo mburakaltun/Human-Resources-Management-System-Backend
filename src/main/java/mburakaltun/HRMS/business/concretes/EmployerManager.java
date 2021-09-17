@@ -2,16 +2,16 @@ package mburakaltun.HRMS.business.concretes;
 
 import mburakaltun.HRMS.business.abstracts.EmployerService;
 import mburakaltun.HRMS.business.abstracts.JobAdvertisementService;
-import mburakaltun.HRMS.core.DataResult;
-import mburakaltun.HRMS.core.Result;
-import mburakaltun.HRMS.core.SuccessDataResult;
-import mburakaltun.HRMS.core.SuccessResult;
-import mburakaltun.HRMS.dataAccess.abstracts.EmployerDAO;
-import mburakaltun.HRMS.entities.concretes.Employer;
-import mburakaltun.HRMS.entities.concretes.JobAdvertisement;
+import mburakaltun.HRMS.core.results.DataResult;
+import mburakaltun.HRMS.core.results.Result;
+import mburakaltun.HRMS.core.results.SuccessDataResult;
+import mburakaltun.HRMS.core.results.SuccessResult;
+import mburakaltun.HRMS.dataAccess.EmployerDAO;
+import mburakaltun.HRMS.models.entities.Employer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -46,8 +46,4 @@ public class EmployerManager implements EmployerService {
         return new SuccessDataResult<>(employerDAO.findByCompanyEmail(companyEmail));
     }
 
-    @Override
-    public Result addJobAdvertisement(JobAdvertisement jobAdvertisement) {
-        return jobAdvertisementService.add(jobAdvertisement);
-    }
 }

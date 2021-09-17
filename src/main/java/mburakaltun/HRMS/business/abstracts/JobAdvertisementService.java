@@ -1,9 +1,9 @@
 package mburakaltun.HRMS.business.abstracts;
 
-import mburakaltun.HRMS.core.DataResult;
-import mburakaltun.HRMS.core.Result;
-import mburakaltun.HRMS.entities.DTOs.JobAdvertisementListDTO;
-import mburakaltun.HRMS.entities.concretes.JobAdvertisement;
+import mburakaltun.HRMS.core.results.DataResult;
+import mburakaltun.HRMS.core.results.Result;
+import mburakaltun.HRMS.models.DTOs.JobAdvertisementListDTO;
+import mburakaltun.HRMS.models.entities.JobAdvertisement;
 
 import java.util.List;
 
@@ -13,4 +13,6 @@ public interface JobAdvertisementService {
     DataResult<List<JobAdvertisementListDTO>> getAllList();
     DataResult<List<JobAdvertisement>> getAll();
     DataResult<List<JobAdvertisementListDTO>> getAllByDesc();
+    DataResult<List<JobAdvertisementListDTO>> getAllByEmployerId(int employerId);
+    Result deleteById(int id);
 }

@@ -1,9 +1,9 @@
 package mburakaltun.HRMS.api.controllers;
 
 import mburakaltun.HRMS.business.abstracts.JobTitleService;
-import mburakaltun.HRMS.core.DataResult;
-import mburakaltun.HRMS.core.Result;
-import mburakaltun.HRMS.entities.concretes.JobTitle;
+import mburakaltun.HRMS.core.results.DataResult;
+import mburakaltun.HRMS.core.results.Result;
+import mburakaltun.HRMS.models.entities.JobTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

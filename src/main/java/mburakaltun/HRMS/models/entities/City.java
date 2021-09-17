@@ -1,4 +1,4 @@
-package mburakaltun.HRMS.entities.concretes;
+package mburakaltun.HRMS.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

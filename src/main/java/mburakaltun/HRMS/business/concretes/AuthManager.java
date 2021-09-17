@@ -3,11 +3,13 @@ package mburakaltun.HRMS.business.concretes;
 import mburakaltun.HRMS.business.abstracts.AuthService;
 import mburakaltun.HRMS.business.abstracts.EmployerService;
 import mburakaltun.HRMS.business.abstracts.JobSeekerService;
-import mburakaltun.HRMS.core.*;
-import mburakaltun.HRMS.entities.DTOs.EmployerRegisterDTO;
-import mburakaltun.HRMS.entities.DTOs.JobSeekerRegisterDTO;
-import mburakaltun.HRMS.entities.concretes.Employer;
-import mburakaltun.HRMS.entities.concretes.JobSeeker;
+import mburakaltun.HRMS.core.results.DataResult;
+import mburakaltun.HRMS.core.results.ErrorDataResult;
+import mburakaltun.HRMS.core.results.SuccessDataResult;
+import mburakaltun.HRMS.models.DTOs.EmployerRegisterDTO;
+import mburakaltun.HRMS.models.DTOs.JobSeekerRegisterDTO;
+import mburakaltun.HRMS.models.entities.Employer;
+import mburakaltun.HRMS.models.entities.JobSeeker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

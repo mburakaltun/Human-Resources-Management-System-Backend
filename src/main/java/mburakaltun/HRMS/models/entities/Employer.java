@@ -1,4 +1,4 @@
-package mburakaltun.HRMS.entities.concretes;
+package mburakaltun.HRMS.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -16,6 +16,9 @@ public class Employer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "company_name")
     private String companyName;

@@ -1,4 +1,4 @@
-package mburakaltun.HRMS.core;
+package mburakaltun.HRMS.core.results;
 
 public class SuccessResult extends Result {
     public SuccessResult() {
