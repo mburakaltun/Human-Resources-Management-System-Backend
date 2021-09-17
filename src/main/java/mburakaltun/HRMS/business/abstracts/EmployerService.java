@@ -3,7 +3,6 @@ package mburakaltun.HRMS.business.abstracts;
 import mburakaltun.HRMS.core.results.DataResult;
 import mburakaltun.HRMS.core.results.Result;
 import mburakaltun.HRMS.models.entities.Employer;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 

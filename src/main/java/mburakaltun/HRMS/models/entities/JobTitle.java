@@ -1,7 +1,9 @@
 package mburakaltun.HRMS.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "job_titles")
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
 public class JobTitle {
 
@@ -23,12 +27,8 @@ public class JobTitle {
     @OneToMany(mappedBy = "jobTitle")
     private List<JobAdvertisement> jobAdvertisements;
 
-
     public JobTitle(String name) {
         this.name = name;
     }
 
-    public JobTitle() {
-
-    }
 }
